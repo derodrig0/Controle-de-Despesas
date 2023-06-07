@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap");
 
 /* 
 font-family: 'Righteous', cursive;
@@ -11,80 +11,98 @@ font-family: 'Sarala', sans-serif;
   box-sizing: border-box;
   text-decoration: none;
 }
-body{
+body {
   height: 100vh;
-  background: linear-gradient(68.15deg, #2F2325 16.62%, #8E5D52 85.61%);
+  background: linear-gradient(68.15deg, #2f2325 16.62%, #8e5d52 85.61%);
   font-size: 100%;
-  font-family: 'Sarala', sans-serif;
+  font-family: "Sarala", sans-serif;
 }
-.centralize{
+.centralize {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.clear{
+.clear {
   border: none;
   background: transparent;
-  color: #ECD6C4;
+  color: #ecd6c4;
 }
-.solid{
-  background: #ECD6C4;
+.solid {
+  background: #ecd6c4;
   border: none;
-  color: #2F2325;
+  color: #2f2325;
 }
-.outline{
+.outline {
   background: transparent;
-  color: #ECD6C4;
-  border: 1px solid #ECD6C4;
+  color: #ecd6c4;
+  border: 1px solid #ecd6c4;
 }
-.error{
+.error {
   color: #fff;
-  background:#f00;
+  background: #f00;
   display: none;
   font-size: 12px;
 }
-form{
+form {
   width: 300px;
 }
-label{
-  color: #ECD6C4;
+label {
+  color: #ecd6c4;
   /* font-weight: bold; */
 }
-input{
+input {
   border: none;
   font-weight: bold;
-  color: #2F2325;
+  color: #2f2325;
 }
 input:focus {
   outline: none;
- }
-input, button{
+}
+input,
+button {
   padding: 5px;
   width: -webkit-fill-available;
 }
-button{
+button {
   cursor: pointer;
   font-weight: bold;
   margin-bottom: 10px;
 }
 button:focus {
-  outline-color: #ECD6C4;
- }
-button:active{
+  outline-color: #ecd6c4;
+}
+button:active {
   opacity: 0.8;
 }
-button[disabled]{
+button[disabled] {
   opacity: 0.7;
 }
-.loading{
-  background: rgba(0,0,0,0.5);
+button.fab {
+  width: 54px;
+  height: 54px;
+  border-radius: 50px;
+  border: none;
+  font-size: 24px;
+  box-shadow: 2px 2px 2px #8e5d52;
+}
+.fab.fixed {
+  position: fixed;
+}
+.fab.bottom {
+  bottom: 32px;
+}
+.fab.right {
+  right: 32px;
+}
+.loading {
+  background: rgba(0, 0, 0, 0.5);
   position: fixed;
   width: 100%;
   height: 100%;
 }
-.loading label{
+.loading label {
   font-size: 24px;
 }
-.form-field{
+.form-field {
   margin-bottom: 10px;
 }

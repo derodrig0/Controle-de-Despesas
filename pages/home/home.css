@@ -1,0 +1,38 @@
+body {
+  color: #2f2325;
+}
+
+header {
+  text-align: right;
+}
+
+header button {
+  width: auto;
+}
+
+ol {
+  list-style-type: none;
+}
+
+ol li {
+  cursor: pointer;
+  background: #ecd6c4;
+  padding: 8px 16px;
+  border-bottom: 1px solid #8e5d52;
+}
+
+ol li:hover {
+  opacity: 0.8;
+}
+
+ol li.expense {
+  border-left: 10px solid #f00;
+}
+
+ol li.income {
+  border-left: 10px solid #008000;
+}
+
+p {
+  margin: 4px 0;
+}
