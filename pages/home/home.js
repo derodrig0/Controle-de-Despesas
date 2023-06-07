@@ -13,9 +13,7 @@ function logout() {
 findTransactions();
 
 function findTransactions() {
-  setTimeout(() => {
-    addTransactionsToScreen(fakeTransactions);
-  }, 1000);
+  firebase;
 }
 
 function addTransactionsToScreen(transactions) {
@@ -61,7 +59,7 @@ const fakeTransactions = [
     date: "2022-01-04",
     money: {
       currency: "R$",
-      value: 10,
+      value: 300,
     },
     transactionType: "Supermercado",
   },
@@ -80,7 +78,7 @@ const fakeTransactions = [
     date: "2022-01-01",
     money: {
       currency: "EUR",
-      value: 10,
+      value: 100,
     },
     transactionType: "Transporte",
     description: "Metrô ida e volta",
