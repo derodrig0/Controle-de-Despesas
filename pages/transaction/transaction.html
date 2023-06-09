@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="transaction.css">
+    <title>Transações - Controle de Gastos</title>
+  </head>
+  <body>
+    <header>
+      <button type="button" class="clear" onclick="logout()">Sair</button>
+    </header>
+    <main class="centralize">
+      <form action="">
+        <div class="form-field">
+          <div>
+            <label>Transação *</label>
+          </div>
+          <input type="radio" name="type" id="expense"><label for="expense">Despesa</label>
+          <input type="radio" name="type" id="income"><label for="income">Receita</label>
+        </div>
+        <div class="form-field">
+          <div>
+            <label>Data da Transação *</label>
+          </div>
+          <input type="date" onchange="onChangeDate()" id="date">
+          <div class="error" id="date-required-error">Data é obrigatória/inválida</div>
+        </div>
+        <div class="form-field">
+          <div>
+            <label>Moeda *</label>
+          </div>
+          <select>
+            <option value="dolar">Dólar</option>
+            <option value="euro">Euro</option>
+            <option value="real" selected>Real</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <div>
+            <label>Valor *</label>
+          </div>
+          <input type="number" onchange="onChangeValue()" id="value">
+          <div class="error" id="value-required-error">Valor é obrigatório</div>
+          <div class="error" id="value-less-or-equal-to-zero-error">Valor deve ser maior que zero</div>
+        </div>
+        <div class="form-field">
+          <div>
+            <label>Tipo da Transação *</label>
+          </div>
+          <select name="type" id="type">
+            <option>-- Selecione um tipo --</option>
+            <option>Acomodação</option>
+            <option>Alimentação</option>
+            <option>Outros</option>
+            <option>Salário</option>
+            <option>Supermercado</option>
+            <option>Transporte</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <div>
+            <label>Descrição</label>
+          </div>
+          <input type="text">
+        </div>
+        <button type="button" class="solid" disabled>Salvar</button>
+        <button type="button" class="clear">Cancelar</button>
+      </form>
+    </main>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script type="text/javascript" src="../../firebase-init.js"></script>
+  <script type="text/javascript" src="../../auth-guard.js"></script>
+  <script type="text/javascript" src="../../loading.js"></script>
+  <script type="text/javascript" src="transaction.js"></script>
+</html>

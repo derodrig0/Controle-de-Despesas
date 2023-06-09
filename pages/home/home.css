@@ -2,14 +2,6 @@ body {
   color: #2f2325;
 }
 
-header {
-  text-align: right;
-}
-
-header button {
-  width: auto;
-}
-
 ol {
   list-style-type: none;
 }

@@ -9,20 +9,20 @@
     <title>Home - Controle de Gastos</title>
   </head>
   <body>
-    <header>
+    <header id="header">
+      <span id="userName"></span>
       <button type="button" class="clear" onclick="logout()">Sair</button>
     </header>
     <ol id="transactions">
       <!-- Lista alimentada via javascript -->
     </ol>
-
-    <button class="fab fixed bottom right">+</button>
-
+    <button class="fab fixed bottom right" onclick="newTransaction()">+</button>
   </body>
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
   <script type="text/javascript" src="../../firebase-init.js"></script>
   <script type="text/javascript" src="../../auth-guard.js"></script>
+  <script type="text/javascript" src="../../loading.js"></script>
   <script type="text/javascript" src="home.js"></script>
 </html>

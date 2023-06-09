@@ -10,10 +10,30 @@ function logout() {
     });
 }
 
-findTransactions();
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    findTransactions(user);
+  }
+});
 
-function findTransactions() {
-  firebase;
+function findTransactions(user) {
+  showLoading();
+  firebase
+    .firestore()
+    .collection("transactions")
+    .where("user.uid", "==", user.uid)
+    .orderBy("date", "desc")
+    .get()
+    .then((snapshot) => {
+      hideLoading();
+      const transactions = snapshot.docs.map((doc) => doc.data());
+      addTransactionsToScreen(transactions);
+    })
+    .catch((error) => {
+      hideLoading();
+      console.log(error);
+      alert("Erro ao recuperar transações");
+    });
 }
 
 function addTransactionsToScreen(transactions) {
@@ -46,51 +66,13 @@ function addTransactionsToScreen(transactions) {
 }
 
 function formatDate(date) {
-  return new Date(date).toLocaleDateString("pt-br");
+  return new Date(date).toLocaleDateString("pt-br", { timeZone: "UTC" });
 }
 
 function formatMoney(money) {
   return `${money.currency} ${money.value.toFixed(2)}`;
 }
 
-const fakeTransactions = [
-  {
-    type: "expense",
-    date: "2022-01-04",
-    money: {
-      currency: "R$",
-      value: 300,
-    },
-    transactionType: "Supermercado",
-  },
-  {
-    type: "income",
-    date: "2022-01-03",
-    money: {
-      currency: "R$",
-      value: 5000,
-    },
-    transactionType: "Sálario",
-    description: "Empresa A",
-  },
-  {
-    type: "expense",
-    date: "2022-01-01",
-    money: {
-      currency: "EUR",
-      value: 100,
-    },
-    transactionType: "Transporte",
-    description: "Metrô ida e volta",
-  },
-  {
-    type: "expense",
-    date: "2022-01-02",
-    money: {
-      currency: "USD",
-      value: 600,
-    },
-    transactionType: "Aluguel",
-    description: "Mensalidade",
-  },
-];
+function newTransaction() {
+  window.location.href = "../transaction/transaction.html";
+}
