@@ -37,6 +37,10 @@ body {
   color: #ecd6c4;
   border: 1px solid #ecd6c4;
 }
+.outline.danger {
+  color: #f00;
+  border-color: #f00;
+}
 .error {
   color: #fff;
   background: #f00;
@@ -48,11 +52,11 @@ form {
 }
 label {
   color: #ecd6c4;
-  /* font-weight: bold; */
+  font-size: 14px;
+  font-weight: bold;
 }
 input {
   border: none;
-  font-weight: bold;
   color: #2f2325;
 }
 input:focus {
@@ -63,12 +67,15 @@ button,
 select {
   padding: 5px;
   width: -webkit-fill-available;
+  font-size: 14px;
 }
 input[type="radio"]{
   width: auto;
 }
 button {
   cursor: pointer;
+  font-family: "Sarala", sans-serif;
+  font-size: 14px;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -88,15 +95,16 @@ button.fab {
   border: none;
   font-size: 24px;
   box-shadow: 2px 2px 2px #8e5d52;
+  color: #2f2325;
 }
 .fab.fixed {
   position: fixed;
 }
 .fab.bottom {
-  bottom: 32px;
+  bottom: 36px;
 }
 .fab.right {
-  right: 32px;
+  right: 4px;
 }
 .loading {
   background: rgba(0, 0, 0, 0.5);
@@ -116,4 +124,10 @@ header {
 }
 header button {
   width: auto;
+}
+header span{
+  float: left;
+  padding: 10px 0 0 10px;
+  font-size: 14px;
+  font-weight: bold;
 }
